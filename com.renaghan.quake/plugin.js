@@ -20,7 +20,7 @@ function load() {
     processError(perr);
     return;
   }
-  if (lat < -180 || lat > 180) {
+  if (lon < -180 || lon > 180) {
     processError(new Error("Latitude must in range -180 180"));
     return;
   }
@@ -32,7 +32,7 @@ function load() {
     processError(perr);
     return;
   }
-  if (lat < 0 || lat > 20000) {
+  if (rad < 0 || rad > 20000) {
     processError(new Error("Radius must in range 0 20,000"));
     return;
   }

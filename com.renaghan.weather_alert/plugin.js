@@ -20,7 +20,7 @@ function load() {
     processError(perr);
     return;
   }
-  if (lat < -180 || lat > 180) {
+  if (lon < -180 || lon > 180) {
     processError(new Error("Latitude must in range -180 180"));
     return;
   }
@@ -42,6 +42,7 @@ function load() {
 		for (const feature of features) {
 			const properties = feature["properties"];
 		  if (properties["@type"] != "wx:Alert") continue;
+		  if (properties["status"] == "Test") continue;
 		  
 		  const id = properties["id"]
 			const date = new Date(properties["sent"]);
