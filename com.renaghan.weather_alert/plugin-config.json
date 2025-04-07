@@ -1,0 +1,9 @@
+{
+  "id": "com.renaghan.weather_alert",
+  "version": 1,
+  "display_name": "Weather Alerts Nearby",
+  "default_color": "coral",
+  "service_name": "NWS",
+  "site": "https://www.weather.gov/documentation/services-web-api",
+  "icon": "https://www.weather.gov/images/nws/newicons/fzra_sn.png",
+}

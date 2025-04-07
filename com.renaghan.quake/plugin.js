@@ -3,7 +3,7 @@ var lastUpdate = null;
 function load() {
   let lat;
   try {
-    lat = parseInt(latitude);
+    lat = parseFloat(latitude);
   } catch (perr) {
     processError(perr);
     return;
@@ -15,7 +15,7 @@ function load() {
 
   let lon;
   try {
-    lon = parseInt(longitude);
+    lon = parseFloat(longitude);
   } catch (perr) {
     processError(perr);
     return;
@@ -27,7 +27,7 @@ function load() {
 
   let rad;
   try {
-    rad = parseInt(radius);
+    rad = parseFloat(radius);
   } catch (perr) {
     processError(perr);
     return;
@@ -39,7 +39,7 @@ function load() {
 
   let mag;
   try {
-    mag = parseInt(magnitude);
+    mag = parseFloat(magnitude);
   } catch (perr) {
     processError(perr);
     return;
