@@ -1,0 +1,28 @@
+{
+	"inputs": [
+		{
+			"name": "latitude",
+			"type": "text",
+			"prompt": "Near Latitude",
+			"value": "34.052235"
+		},
+		{
+			"name": "longitude",
+			"type": "text",
+			"prompt": "Near Longitude",
+			"value": "-118.243683"
+		},
+		{
+			"name": "radius",
+			"type": "text",
+			"prompt": "Within Radius km",
+			"value": "161"
+		},
+		{
+			"name": "magnitude",
+			"type": "text",
+			"prompt": "Of Magnitude",
+			"value": "4"
+		}
+	]
+}

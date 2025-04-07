@@ -1,0 +1,6 @@
+{
+  "id": "com.renaghan.quake",
+  "display_name": "Earthquakes Nearby",
+  "site": "https://earthquake.usgs.gov/fdsnws/event/1/",
+  "icon": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/medium/public/vhp_img5715.jpg",
+}
