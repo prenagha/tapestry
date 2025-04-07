@@ -1,6 +1,9 @@
 {
   "id": "com.renaghan.quake",
+  "version": 2,
   "display_name": "Earthquakes Nearby",
+  "default_color": "coral",
+  "service_name": "USGS",
   "site": "https://earthquake.usgs.gov/fdsnws/event/1/",
   "icon": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/medium/public/vhp_img5715.jpg",
 }

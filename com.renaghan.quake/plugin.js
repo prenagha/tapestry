@@ -50,7 +50,7 @@ function load() {
   }
 	
 	// events in the last 5 days
-	const since = new Date(Date.now() - 4320000000).toISOString();
+	const since = new Date(Date.now() - 432000000).toISOString();
 	
 	const endpoint = site + "query?format=geojson"
 	  + "&starttime=" + since
