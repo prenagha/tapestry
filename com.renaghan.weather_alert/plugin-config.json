@@ -1,6 +1,6 @@
 {
   "id": "com.renaghan.weather_alert",
-  "version": 2,
+  "version": 3,
   "display_name": "Weather Alerts Nearby",
   "default_color": "coral",
   "service_name": "NWS",

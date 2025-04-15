@@ -1,4 +1,26 @@
-var lastUpdate = null;
+
+const NEWLINES = /\r\n|\r|\n/g;
+const DATE_OPTS = {
+  weekday: "short",
+  month:   "short",
+  day:     "numeric"
+};
+const TIME_OPTS = {
+  hour:    "numeric",
+  minute:  "2-digit"
+};
+const TIME_OPTS_ZERO_MIN = {
+  hour:    "numeric"
+};
+
+function formatDate(dt) {
+  return new Intl.DateTimeFormat(undefined, DATE_OPTS).format(dt);
+}
+
+function formatTime(dt) {
+  const opts = dt.getMinutes() == 0 ? TIME_OPTS_ZERO_MIN : TIME_OPTS;
+  return new Intl.DateTimeFormat(undefined, opts).format(dt);
+}
 
 function load() {
   let lat;
@@ -26,10 +48,9 @@ function load() {
   }
 
 	const endpoint = "https://api.weather.gov/alerts/active"
-	  + "?point=" + lat + "," + lon;
+	  + "?point=" + encodeURIComponent(lat) + "," + encodeURIComponent(lon);
 	
 	console.log("Query URL " + endpoint);
-
 	
 	sendRequest(endpoint)
 	.then((text) => {
@@ -45,15 +66,39 @@ function load() {
 		  if (properties["status"] == "Test") continue;
 		  
 		  const id = properties["id"]
-			const date = new Date(properties["sent"]);
+			const start = new Date(properties["effective"]);
+			const end   = new Date(properties["ends"]);
 			const title = properties["event"];
-			const body = "<p><strong>" + properties["headline"] + "</strong></p><p>" 
-			  + properties["description"].replace("\n","<br>") + "</p>";
-	    const itemUrl = "https://forecast.weather.gov/MapClick.php"
-	      + "?lat=" + lat + "&lon=" + lon
-	      + "&tapestryId=" + id;
+			const desc = properties["description"].replace(NEWLINES, "<br>");
+			
+			let when = "";
+      if (start.getDate() == end.getDate()
+       && start.getMonth() == end.getMonth()
+       && start.getFullYear() == end.getFullYear()) {
+       // shorter format if same day
+         when = formatDate(start)
+           + "<br>"
+           + formatTime(start)
+           + " → "
+           + formatTime(end);
+      } else {
+         when = formatDate(start)
+           + " "
+           + formatTime(start)
+           + " →<br>"
+           + formatDate(end)
+           + " "
+           + formatTime(end);
+      }
 
-			let item = Item.createWithUriDate(itemUrl, date);
+			const body = "<p><strong>" + when + "</strong></p>" 
+			  + "<p>" + desc + "</p>";
+	    const itemUrl = "https://forecast.weather.gov/MapClick.php"
+	      + "?lat=" + encodeURIComponent(lat) 
+	      + "&lon=" + encodeURIComponent(lon)
+	      + "&tapestryId=" + encodeURIComponent(id);
+
+			let item = Item.createWithUriDate(itemUrl, start);
 			item.title = title;
 			item.body = body;			
 			results.push(item);
