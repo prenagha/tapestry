@@ -1,10 +1,18 @@
 # Tapestry Connectors
 
-Custom [connectors](https://github.com/TheIconfactory/Tapestry/blob/main/Documentation/API.md) for Tapestry iOS Application.
+Connectors for the [Tapestry app](https://usetapestry.com/).
 
-[com.renaghan.quake](/com.renaghan.quake) : Connect to USGS to find earthquakes near a provided location
+### 📖 Documentation
 
-[com.renaghan.weather_alert](com.renaghan.weather_alert) : Connect to NWS to find weather alerts near a provided location
+The official documentation for the JavaScript-based API used to build connectors for Tapestry can be found at [TheIconfactory/Tapestry](https://github.com/TheIconfactory/Tapestry/blob/main/Documentation/API.md).
 
+### 🔌 Plugins
+
+This repository contains the following plugins:
+
+|Name|Description|Link
+|-|-|-|
+|[com.renaghan.quake](/com.renaghan.quake)|USGS recent earthquakes|[Download](https://github.com/prenagha/tapestry/releases/download/latest/com.renaghan.quake.tapestry)|
+|[com.renaghan.weather_alert](/com.renaghan.weather_alert)|NWS weather alerts |[Download](https://github.com/prenagha/tapestry/releases/download/latest/com.renaghan.weather_alert.tapestry)|
 
 
