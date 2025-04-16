@@ -12,7 +12,7 @@ This repository contains the following plugins:
 
 |Name|Description|Link
 |-|-|-|
-|[com.renaghan.quake](/com.renaghan.quake)|USGS recent earthquakes|[Download](https://github.com/prenagha/tapestry/releases/download/latest/com.renaghan.quake.tapestry)|
-|[com.renaghan.weather_alert](/com.renaghan.weather_alert)|NWS weather alerts |[Download](https://github.com/prenagha/tapestry/releases/download/latest/com.renaghan.weather_alert.tapestry)|
+|[com.renaghan.quake](/com.renaghan.quake)|USGS recent earthquakes|[Download](https://github.com/prenagha/tapestry/releases/latest/download/com.renaghan.quake.tapestry)|
+|[com.renaghan.weather_alert](/com.renaghan.weather_alert)|NWS weather alerts |[Download](https://github.com/prenagha/tapestry/releases/latest/download/com.renaghan.weather_alert.tapestry)|
 
 
